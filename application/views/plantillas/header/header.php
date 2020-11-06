@@ -5,23 +5,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>OtakuStore</title>
-	<link rel="stylesheet" text="text/css" href="<?php echo base_url(); ?>assets/estilos/vendor/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" text="text/css" href="assets/estilos/vendor/bootstrap/css/bootstrap.css">
   <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
-  <script src="<?php echo base_url(); ?>assets/estilos/vendor/bootstrap/js/bootstrap.min.js"></script>  
+  <script src="assets/estilos/vendor/bootstrap/js/bootstrap.min.js"></script>  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 	<?php  
     if (session_status() != 2) {
       session_start();
     }
-    $perfil = base_url('assets\estilos\img/perfil.png');
+    $perfil = ('assets\estilos\img/perfil.png');
     if (isset($_SESSION['usuario'])) {
-      $perfil = base_url('assets\estilos\img/perfil_iniciado.png');
+      $perfil = ('assets\estilos\img/perfil_iniciado.png');
     }
 
 
   ?>
-	<link rel="shortcut icon" type="image/ico" href="<?php echo base_url(); ?>assets\estilos\img\Logo.ico"/>
+	<link rel="shortcut icon" type="image/ico" href="assets\estilos\img\Logo.ico"/>
 
 </head>
 <body >
@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="collapse container navbar-collapse">
-      <a class="navbar-brand" href="<?php echo base_url('index.php')?>"><img src="<?php echo base_url('assets\estilos\img/Logo.png')?>" width="80" height="80"
+      <a class="navbar-brand" href="index.php"><img src="assets\estilos\img/Logo.png" width="80" height="80"
 title="OtakuStore"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Categorias" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -38,7 +38,7 @@ title="OtakuStore"></a>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <?php // Revisar Busqueda?>
-            <form method="POST" action = "<?php echo base_url('index.php/Welcome/buscar');?>" >
+            <form method="POST" action = "index.php/Welcome/buscar" >
               <input class="form-control" type="text" name="buscar" placeholder="Buscar" disabled title="En mantenimento">
           </li>
           <li class="nav-item active">
@@ -46,15 +46,15 @@ title="OtakuStore"></a>
             </form>
 
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php')?>">Inicio
+            <a class="nav-link" href="'index.php">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active" >
-            <a class="nav-link" href="<?php echo base_url('index.php/Welcome/animes')?>">Animes   <img src="<?php echo base_url('assets\estilos\img/tres.png')?>" width="14" height="14" ></a>
+            <a class="nav-link" href="index.php/Welcome/animes">Animes   <img src="assets\estilos\img/tres.png" width="14" height="14" ></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Welcome/carrito')?>"><img src="<?php echo base_url('assets\estilos\img/carrito.png')?>" width="40" height="40" title="Tu carrito"></a>
+            <a class="nav-link" href="index.php/Welcome/carrito"><img src="assets\estilos\img/carrito.png" width="40" height="40" title="Tu carrito"></a>
           </li>
           <li class="nav-item">
             <div class="dropdown">
@@ -76,7 +76,7 @@ title="OtakuStore"></a>
                  ?>
               </div>
             </div>
-            <!--<a class="nav-link" href="<?php echo base_url('index.php/Welcome/login')?>"></a> -->
+            <!--<a class="nav-link" href="index.php/Welcome/login"></a> -->
           </li>
         </ul>
       </div>
@@ -85,25 +85,25 @@ title="OtakuStore"></a>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-pink">
     <div class="container">
-      <a class="navbar-brand" href="<?php echo base_url('index.php/Welcome/todo')?>">Todos los productos</a>
+      <a class="navbar-brand" href="index.php/Welcome/todo">Todos los productos</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navegacion" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="Navegacion">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Welcome/ropa')?>">Ropa
+            <a class="nav-link" href="index.php/Welcome/ropa">Ropa
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Welcome/ilustraciones')?>">Ilustraciones</a>
+            <a class="nav-link" href="index.php/Welcome/ilustraciones">Ilustraciones</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Welcome/coleccionables')?>">Coleccionables</a>
+            <a class="nav-link" href="index.php/Welcome/coleccionables">Coleccionables</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url('index.php/Welcome/otros')?>">Otros</a>
+            <a class="nav-link" href="index.php/Welcome/otros">Otros</a>
           </li>
         </ul>
       </div>
