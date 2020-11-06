@@ -42,7 +42,7 @@ title="OtakuStore"></a>
               <input class="form-control" type="text" name="buscar" placeholder="Buscar" disabled title="En mantenimento">
           </li>
           <li class="nav-item active">
-              <input class="nav-link" type="image" src="<?php echo base_url('assets/estilos/img/buscar.png')?>" name="buscas" width="50" height="50" disabled title="En mantenimento">
+              <input class="nav-link" type="image" src="assets/estilos/img/buscar.png" name="buscas" width="50" height="50" disabled title="En mantenimento">
             </form>
 
           <li class="nav-item active">
