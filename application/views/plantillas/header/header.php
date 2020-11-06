@@ -46,7 +46,7 @@ title="OtakuStore"></a>
             </form>
 
           <li class="nav-item active">
-            <a class="nav-link" href="'index.php">Inicio
+            <a class="nav-link" href="index.php">Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
