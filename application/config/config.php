@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://github.com/CesarLara7u7/otakustore/tree/main/';
+$config['base_url'] = 'http://app-d279486a-f27e-41df-8323-ea6569ae5ab0.cleverapps.io/';
 
 /*
 |--------------------------------------------------------------------------
