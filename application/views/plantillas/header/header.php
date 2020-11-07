@@ -68,10 +68,10 @@ title="OtakuStore"></a>
                     echo "<div class='dropdown-divider'></div>";
                     echo "<a href='' class='dropdown-item btn'>Mi perfil</a>";
                     echo "<a href='' class='dropdown-item btn'>Lista de deseados</a>";
-                    echo "<a href='".base_url('index.php/Welcome/cerrar_sesion')."' class='dropdown-item btn'>Cerrar sesíon</a>";
+                    echo "<a href='index.php/Welcome/cerrar_sesion' class='dropdown-item btn'>Cerrar sesíon</a>";
                   }else{
                     echo "<label class = 'dropdown-item-text'>¡Aun no inicias sesión!</label>";
-                    echo "<label class = 'dropdown-item-text'>Inicia sesión o registrate <a href = '".base_url('index.php/Welcome/login')."' style = 'color: pink;'>aquí</a></label>";
+                    echo "<label class = 'dropdown-item-text'>Inicia sesión o registrate <a href = 'index.php/Welcome/login' style = 'color: pink;'>aquí</a></label>";
                   }
                  ?>
               </div>
