@@ -13,8 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php  //REVISAR EL INICIO DE SESION XDDDDDDDDDDDDD
     /*if (session_status() != 2) {
       session_start();
-    }
-    $perfil = base_url('assets\estilos\img/perfil.png');
+    }*/
+    $perfil = base_url('assets\estilos\img/perfil.png');/*
     if (isset($_SESSION['usuario'])) {
       $perfil = base_url('assets\estilos\img/perfil_iniciado.png');
     }
