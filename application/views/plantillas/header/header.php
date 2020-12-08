@@ -10,15 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="<?php echo base_url(); ?>assets/estilos/vendor/bootstrap/js/bootstrap.min.js"></script>  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-	<?php  //REVISAR EL INICIO DE SESION XDDDDDDDDDDDDD
-    /*if (session_status() != 2) {
+	<?php  
+    if (session_status() != 2) {
       session_start();
-    }*/
-    $perfil = base_url('assets\estilos\img/perfil.png');/*
+    }
+    $perfil = base_url('assets\estilos\img/perfil.png');
     if (isset($_SESSION['usuario'])) {
       $perfil = base_url('assets\estilos\img/perfil_iniciado.png');
     }
-*/
+
 
   ?>
 	<link rel="shortcut icon" type="image/ico" href="<?php echo base_url(); ?>assets\estilos\img\Logo.ico"/>
@@ -63,16 +63,16 @@ title="OtakuStore"></a>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <?php 
-                  /*if (isset($_SESSION['usuario'])) {
+                  if (isset($_SESSION['usuario'])) {
                     echo "<label class='dropdown-header'>".$_SESSION['usuario']."</label>";
                     echo "<div class='dropdown-divider'></div>";
-                    echo "<a href='' class='dropdown-item btn'>Mi perfil</a>";
-                    echo "<a href='' class='dropdown-item btn'>Lista de deseados</a>";
+                    echo "<a href='".base_url('index.php/Welcome/mantenimiento')."' class='dropdown-item btn'>Mi perfil</a>";
+                    echo "<a href='".base_url('index.php/Welcome/mantenimiento')."' class='dropdown-item btn'>Lista de deseados</a>";
                     echo "<a href='".base_url('index.php/Welcome/cerrar_sesion')."' class='dropdown-item btn'>Cerrar sesíon</a>";
-                  }else{*/
+                  }else{
                     echo "<label class = 'dropdown-item-text'>¡Aun no inicias sesión!</label>";
                     echo "<label class = 'dropdown-item-text'>Inicia sesión o registrate <a href = '".base_url('index.php/Welcome/login')."' style = 'color: pink;'>aquí</a></label>";
-                  //}
+                  }
                  ?>
               </div>
             </div>

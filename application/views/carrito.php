@@ -46,7 +46,7 @@
                     <?php 
                         if (isset($listaProductos)) {
                             $iter = 0;
-                            $precio = 1;
+                            $precio = 0;
                             echo "<script> var update = []; </script>";
                             foreach ($listaProductos as $producto) {
                                 echo "<div class='row' id ='p".$iter."' >";
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <hr id = 'sep".$iter."'>";
-                                echo "<script> update.push({update: false, delete: false, id: '".$producto['idProducto']."', cantidad: '".$producto['cantidad']."' }) </script>";
+                                echo "<script> update.push({update: false, delete: false, id: '".$producto['idArticulo']."', cantidad: '".$producto['cantidad']."' }) </script>";
                                 $iter = $iter+1;
                                 $precio = $precio+($producto['cantidad']*$producto['precio']);
                             }

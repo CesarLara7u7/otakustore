@@ -39,11 +39,11 @@
 
 		<div class="col-lg-4 col-md-6 mb-4">
 			<h2>Crear cuenta</h2>
-			<form class="px-4 py-3" method="POST" action="<?php echo base_url('index.php/welcome/registrarse_form') ?>">
+			<form class="px-4 py-3" method="POST" name="formulario" action="<?php echo base_url('index.php/welcome/registrarse_form') ?>">
 				<div class="form-grup">
 					<label>Dirección de correo electrónico</label>
 					<span class="required" title="Obligatorio">*</span>
-					<input type="email" name="user" class="form-control" placeholder="ejemplo@micorreo.com" required>
+					<input type="email" name="registro" class="form-control" placeholder="ejemplo@micorreo.com" required>
 				</div>
 				<div class="form-grup">
 					<input class="btn btn-dark btn-block" type="submit" name="iniciar" value="Crear" style="margin-top: 32px">

@@ -160,7 +160,7 @@ function isValidForm(){
 	<div class="row">
 		<div class="col-md-8">
 			<div class="form-grup" align="center">
-				<input type="hidden" name="mail" value="<?php echo $_POST['user'] ?>">
+				<input type="hidden" name="mail" value="<?php echo $_POST['registro'] ?>">
 				<input class="btn btn-dark btn-block" type="submit" name="iniciar" value="Crear" style="margin-top: 32px" >
 			</div>
 		</div>
