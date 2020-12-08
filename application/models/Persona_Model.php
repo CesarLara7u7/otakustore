@@ -32,11 +32,11 @@
 			}
 			$carrito = $this->db->query("SELECT idCarrito FROM carrito WHERE idPersona = '".$user."';");
 			$carrito = $carrito->result_array()[0]['idCarrito'];
-			if ($this->db->query("SELECT id FROM itemCarrito WHERE idCarrito ='".$carrito."' AND idProducto = '".$id."';")->result_array() == NULL) {
-				$this->db->query("INSERT INTO itemCarrito(idProducto, idCarrito, cantidad) VALUES('".$id."', '".$carrito."','".$cantidad."');");
+			if ($this->db->query("SELECT idArticulo FROM itemCarrito WHERE idCarrito ='".$carrito."' AND idArticulo = '".$id."';")->result_array() == NULL) {
+				$this->db->query("INSERT INTO itemCarrito(idArticulo, idCarrito, cantidad) VALUES('".$id."', '".$carrito."','".$cantidad."');");
 			}else{
-				$cantidad_actual = $this->db->query("SELECT cantidad FROM itemCarrito WHERE idCarrito ='".$carrito."' AND idProducto = '".$id."';")->result_array()[0]['cantidad'];
-				$this->db->query("UPDATE itemCarrito SET cantidad = '".($cantidad+$cantidad_actual)."' WHERE idCarrito = '".$carrito."' AND idProducto = '".$id."';");
+				$cantidad_actual = $this->db->query("SELECT cantidad FROM itemCarrito WHERE idCarrito ='".$carrito."' AND idArticulo = '".$id."';")->result_array()[0]['cantidad'];
+				$this->db->query("UPDATE itemCarrito SET cantidad = '".($cantidad+$cantidad_actual)."' WHERE idCarrito = '".$carrito."' AND idArticulo = '".$id."';");
 			}
 				
 		}
@@ -48,7 +48,11 @@
 				$this->db->query("INSERT INTO carrito(idPersona) VALUES(".$user.");");
 			}
 			
-			$carrito = $this->db->query("CALL getCarrito(".$user.");");
+			$carrito = $this->db->query('Select * from carrito inner join persona on
+			carrito.idPersona = persona.idPersona inner join itemCarrito on
+			carrito.idCarrito = itemCarrito.idCarrito inner join articulo on
+			itemCarrito.idArticulo = articulo.idArticulo
+			where persona.nombre = "'.$usuario.'"');#query("CALL getCarrito(".$user.");");
 			return $carrito->result_array();
 		}
 
@@ -57,7 +61,7 @@
 			$user = $user->result_array()[0]['idPersona'];
 			$carrito = $this->db->query("SELECT idCarrito FROM carrito WHERE idPersona = '".$user."';");
 			$carrito = $carrito->result_array()[0]['idCarrito'];
-			$this->db->query("DELETE FROM itemCarrito WHERE idCarrito = '".$carrito."' AND idProducto = '".$id."';");
+			$this->db->query("DELETE FROM itemCarrito WHERE idCarrito = '".$carrito."' AND idArticulo = '".$id."';");
 		}
 
 		public function updateCarrito($id,$usuario,$cantidad){
@@ -65,11 +69,11 @@
 			$user = $user->result_array()[0]['idPersona'];
 			$carrito = $this->db->query("SELECT idCarrito FROM carrito WHERE idPersona = '".$user."';");
 			$carrito = $carrito->result_array()[0]['idCarrito'];
-			$this->db->query("UPDATE itemCarrito SET cantidad = '".$cantidad."' WHERE idCarrito = '".$carrito."' AND idProducto = '".$id."';");
+			$this->db->query("UPDATE itemCarrito SET cantidad = '".$cantidad."' WHERE idCarrito = '".$carrito."' AND idArticulo = '".$id."';");
 		}
 
 		public function registrar($nombre,$mail,$apellidos,$usuario,$contra){
-			$consulta=$this->db->query("INSERT INTO persona(nombre, email, password, usuario, apellidos) VALUES('".$nombre."','".$mail."','".$contra."','".$usuario."','".$apellidos."');");
+			$consulta=$this->db->query("INSERT INTO persona(nombre, apellidos,email ,password , usuario) VALUES('".$nombre."','".$apellidos."','".$mail."','".$contra."','".$usuario."');");
 		}
 
 		public function inicio_s($mail,$pass){
@@ -89,9 +93,20 @@
 			return $consulta->result_array();#result_array
 		}
 		public function listarAnimes(){
-			$consulta=$this->db->get('animes');
+			$consulta=$this->db->query('Select * from animes order by animes.anime;'); #query('Select * from articulo inner join animes on articulo.anime = animes.idAnime order by animes.anime;')
 			$result=$consulta->result_array();
 			return $result;
+		}
+
+		public function listarArticuloAnime($dato){
+			$this->db->where('idAnime',$dato);
+			$consulta=$this->db->get('articulo');
+			return $consulta->result_array();#result_array
+		}
+		public function listarAnime($dato){
+			$this->db->where('idAnime',$dato);
+			$consulta=$this->db->get('animes');
+			return $consulta->result_array();#result_array
 		}
 	}
 ?>

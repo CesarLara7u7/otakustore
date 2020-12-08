@@ -101,7 +101,7 @@ class Welcome extends CI_Controller {
 	}
 
 	public function registrarse_form(){
-		$dato['mail'] = $_POST['user'];
+		$dato['mail'] = $_POST['registro'];
 		$this->load->view('plantillas/header/header');
 		$this->load->view('registro',$dato);
 		$this->load->view('plantillas/fooder/fooder');
@@ -159,6 +159,20 @@ class Welcome extends CI_Controller {
 		$dato['id'] = $id;
 		$this->load->view('plantillas/header/header');
 		$this->load->view('item',$dato);
+		$this->load->view('plantillas/fooder/fooder');
+	}
+	public function itemanime()
+	{
+		$id = $_GET['id'];
+		$dato['articulo']=$this->Persona_Model->listarArticuloAnime($id);
+		$dato['animes']=$this->Persona_Model->listarAnime($id);
+		$this->load->view('plantillas/header/header');
+		$this->load->view('itemanime',$dato);
+		$this->load->view('plantillas/fooder/fooder');
+	}
+	public function mantenimiento(){
+		$this->load->view('plantillas/header/header');
+		$this->load->view('mantenimiento');
 		$this->load->view('plantillas/fooder/fooder');
 	}
 }
