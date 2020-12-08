@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+session_save_path;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
